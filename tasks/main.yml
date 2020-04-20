@@ -1,0 +1,25 @@
+---
+
+- name: create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+    recurse: true
+  loop:
+    - "{{ allure_report_generator_srv_dir }}"
+    - "{{ allure_report_generator_tests_dir }}"
+    - "{{ allure_report_generator_reports_dir }}"
+
+- name: container {{ allure_report_generator_ct_name }}
+  docker_container:
+    name: "{{ allure_report_generator_ct_name }}"
+    image: "{{ allure_report_generator_ct_image }}"
+    volumes:
+      - "{{ allure_report_generator_tests_dir }}:/allure/tests"
+      - "{{ allure_report_generator_reports_dir }}:/allure/reports"
+    restart_policy: "{{ allure_report_generator_ct_restart_policy }}"
+    state: "{{ allure_report_generator_ct_state }}"
+    restart: "{{ allure_report_generator_ct_restart }}"
+    pull: "{{ allure_report_generator_ct_pull }}"
+    recreate: "{{ allure_report_generator_ct_recreate }}"

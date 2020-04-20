@@ -1,0 +1,17 @@
+---
+allure_report_generator_ct_name: "allure-report-generator"
+allure_report_generator_ct_image: "freehck/allure-report-generator:2.13.2"
+allure_report_generator_ct_restart_policy: "always"
+allure_report_generator_ct_state: "started"
+allure_report_generator_ct_restart: false
+allure_report_generator_ct_pull: true
+allure_report_generator_ct_recreate: false
+
+allure_report_generator_srv_dir: "/srv/{{ allure_report_generator_ct_name }}"
+allure_report_generator_tests_dir: "{{ allure_report_generator_srv_dir }}/test-results"
+allure_report_generator_reports_dir: "{{ allure_report_generator_srv_dir }}/allure-reports"
+allure_report_generator_tests_dir_owner: "root"
+allure_report_generator_tests_dir_group: "root"
+allure_report_generator_reports_dir_owner: "root"
+allure_report_generator_reports_dir_group: "root"
+...
