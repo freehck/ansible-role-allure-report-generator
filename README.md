@@ -13,7 +13,7 @@ Role Variables
 
 Container variables:
 
-- `allure_report_generator_ct_name`: container name, default is `"allure-report-generator"z
+- `allure_report_generator_ct_name`: container name, default is `"allure-report-generator"`
 - `allure_report_generator_ct_image`: container image, default is `"freehck/allure-report-generator:2.13.2"`
 - `allure_report_generator_ct_restart_policy`: default restart policy is `"always"`
 - `allure_report_generator_ct_state`: default container state is `"started"`
