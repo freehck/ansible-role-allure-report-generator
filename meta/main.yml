@@ -14,7 +14,8 @@ galaxy_info:
 
   galaxy_tags:
     - allure
-    - allure-report-generator
+    - report
+    - generator
 
 dependencies:
   - role: freehck.mkdir
